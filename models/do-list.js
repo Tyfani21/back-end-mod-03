@@ -4,16 +4,12 @@ const mongoose = require('mongoose');
 // Model --> são construtores que pegam um schema e criam uma instância de um documento equivalente a registros em um banco de dados relacional.
 // Collections (Coleção) --> são equivalentes a tabelas em bancos de dados relacionais. Eles podem conter vários documentos JSON.
 
-const musicaModel = new mongoose.Schema({
-  nome: { type: String, required: true },
-  autor: { type: String, required: true },
-  genero: { type: String, required: true },
-  capa: { type: String },
-  letra: { type: String },
-  duracao: { type: Number, required: true },
-  dataCriacao: { type: Date, default: Date.now }
+const tarefaModel = new mongoose.Schema({
+  Tarefa: { type: String, required: true },
+  Data: { type: Date, default: Date.now, required: true },
+  Hora: { type: Number }
 })
 
-const Musica = mongoose.model("musicas", musicaModel);
+const Tarefa= mongoose.model("tarefas", tarefaModel);
 
-module.exports = Musica;
+module.exports = Tarefa;
