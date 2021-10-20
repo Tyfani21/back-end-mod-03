@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const tarefaModel = new mongoose.Schema({
   Tarefa: { type: String, required: true },
-  Data: { type: Date, default: Date.now, required: true },
+  Data: { type: Date, default: Date.bind, required: true },
   Hora: { type: Number }
 })
 
